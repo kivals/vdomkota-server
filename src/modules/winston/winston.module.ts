@@ -5,7 +5,7 @@ import { createLogger, format, LoggerOptions, transports } from 'winston';
   providers: [
     {
       provide: 'winston-options',
-      useFactory: () => {
+      useFactory: (): LoggerOptions => {
         return {
           level: 'info',
           format: format.json(),
