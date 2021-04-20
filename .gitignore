@@ -2,6 +2,7 @@
 /dist
 /node_modules
 .env
+/dbdata
 # Logs
 logs
 *.log
@@ -32,3 +33,19 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+/dbdata/_mdb_catalog.wt
+/dbdata/collection-0-3010090837577912269.wt
+/dbdata/collection-2-3010090837577912269.wt
+/dbdata/collection-4-3010090837577912269.wt
+/dbdata/index-1-3010090837577912269.wt
+/dbdata/index-3-3010090837577912269.wt
+/dbdata/index-5-3010090837577912269.wt
+/dbdata/index-6-3010090837577912269.wt
+/dbdata/mongod.lock
+/dbdata/sizeStorer.wt
+/dbdata/storage.bson
+/dbdata/WiredTiger
+/dbdata/WiredTiger.lock
+/dbdata/WiredTiger.turtle
+/dbdata/WiredTiger.wt
+/dbdata/WiredTigerLAS.wt
