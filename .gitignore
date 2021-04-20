@@ -49,3 +49,4 @@ lerna-debug.log*
 /dbdata/WiredTiger.turtle
 /dbdata/WiredTiger.wt
 /dbdata/WiredTigerLAS.wt
+/.env

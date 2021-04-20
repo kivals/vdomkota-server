@@ -29,6 +29,7 @@ export class ConfigService {
     const envSchema = joi.object({
       APP_ENV: joi.string().valid('dev', 'prod').default('dev'),
       APP_PORT: joi.number().default(3000),
+      DB_URL: joi.string(),
     });
 
     const { value: validatedEnvConfig, error } = envSchema.validate(config);

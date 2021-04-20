@@ -8,5 +8,6 @@ import { ConfigService } from './config.service';
       useValue: new ConfigService('.env'),
     },
   ],
+  exports: [ConfigService],
 })
 export class ConfigModule {}
