@@ -11,6 +11,9 @@ export class Cat extends Document {
   @Prop({ type: String, required: true })
   info: string;
 
+  @Prop({ type: String })
+  extraInfo: string;
+
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CatPhoto' }] })
   photos: CatPhoto[];
 
