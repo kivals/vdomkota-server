@@ -30,6 +30,13 @@ export class ConfigService {
       APP_ENV: joi.string().valid('dev', 'prod').default('dev'),
       APP_PORT: joi.number().default(3000),
       DB_URL: joi.string(),
+      UPLOAD_DEST: joi.string().default('./uploads'),
+      MAX_IMG_FILE_SIZE: joi
+        .number()
+        .positive()
+        .min(1024)
+        .default(1024 * 1024),
+      MAX_COUNT_FILES: joi.number().positive().min(1).default(10),
     });
 
     const { value: validatedEnvConfig, error } = envSchema.validate(config);

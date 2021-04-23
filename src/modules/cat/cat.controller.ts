@@ -1,8 +1,18 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Put,
+  UploadedFile,
+  UseInterceptors,
+} from '@nestjs/common';
 import { CatService } from './cat.service';
 import { Cat } from './entity/cat.entity';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { EditCatDto } from './dto/edit-cat.dto';
+import { FilesInterceptor } from '@nestjs/platform-express';
 
 /**
  * Cat controller
@@ -32,12 +42,16 @@ export class CatController {
 
   /**
    * Create new Cat
+   * @param files
    * @param payload
    * @return {Promise<Cat>} created cat
    */
   @Post()
-  createCat(@Body() payload: CreateCatDto): Promise<Cat> {
-    console.log(payload);
+  @UseInterceptors(FilesInterceptor('files'))
+  createCat(
+    @UploadedFile() files: Express.Multer.File,
+    @Body() payload: CreateCatDto,
+  ): Promise<Cat> {
     return this.catService.create(payload);
   }
 
