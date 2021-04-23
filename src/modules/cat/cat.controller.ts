@@ -5,7 +5,7 @@ import {
   Param,
   Post,
   Put,
-  UploadedFile,
+  UploadedFiles,
   UseInterceptors,
 } from '@nestjs/common';
 import { CatService } from './cat.service';
@@ -49,9 +49,10 @@ export class CatController {
   @Post()
   @UseInterceptors(FilesInterceptor('files'))
   createCat(
-    @UploadedFile() files: Express.Multer.File,
+    @UploadedFiles() files: Express.Multer.File,
     @Body() payload: CreateCatDto,
   ): Promise<Cat> {
+    console.log(files);
     return this.catService.create(payload);
   }
 
