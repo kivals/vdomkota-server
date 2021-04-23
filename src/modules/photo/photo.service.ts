@@ -6,4 +6,8 @@ import { Model } from 'mongoose';
 @Injectable()
 export class PhotoService {
   constructor(@InjectModel(Photo.name) private photoModel: Model<Photo>) {}
+
+  savePhotos(photos: Photo[]) {
+    return this.photoModel.insertMany(photos);
+  }
 }

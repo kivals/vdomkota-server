@@ -4,17 +4,13 @@ import { Cat } from './entity/cat.entity';
 import { Model } from 'mongoose';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { EditCatDto } from './dto/edit-cat.dto';
-import { Photo } from '../photo/entity/photo.entity';
 
 /**
  * Cat service
  */
 @Injectable()
 export class CatService {
-  constructor(
-    @InjectModel(Cat.name) private readonly catModel: Model<Cat>,
-    @InjectModel(Photo.name) private readonly photoModel: Model<Photo>,
-  ) {}
+  constructor(@InjectModel(Cat.name) private readonly catModel: Model<Cat>) {}
 
   /**
    * Fetches a cat from database
@@ -31,22 +27,23 @@ export class CatService {
    */
   async getById(id: string): Promise<Cat> {
     const cat = await this.catModel.findById(id).exec();
-    console.log(cat);
     if (!cat) {
-      throw new NotFoundException(
-        `The cat with that id = ${id} does not exist in the system. Please try another id`,
-      );
+      throw new NotFoundException(`The cat with that id = ${id} does not exist in the system. Please try another id`);
     }
     return cat;
   }
 
   /**
-   * Create cat
+   * Create new cat
    * @param {CreateCatDto} payload
+   * @param photos
    * @returns {Promise<Cat>} created cat data
    */
-  create(payload: CreateCatDto): Promise<Cat> {
-    return this.catModel.create(payload);
+  create(payload: CreateCatDto, photos: string[]): Promise<Cat> {
+    const cat = new this.catModel(payload);
+    cat.photos = photos;
+
+    return cat.save();
   }
 
   /**
@@ -58,9 +55,7 @@ export class CatService {
   async edit(id: string, payload: EditCatDto): Promise<Cat> {
     const editedCat = await this.catModel.updateOne({ id }, payload);
     if (editedCat.nModified !== 1) {
-      throw new NotFoundException(
-        `The cat with that id = ${id} does not exist in the system. Please try another id`,
-      );
+      throw new NotFoundException(`The cat with that id = ${id} does not exist in the system. Please try another id`);
     }
     return this.getById(id);
   }

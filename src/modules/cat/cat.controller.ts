@@ -1,25 +1,18 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Param,
-  Post,
-  Put,
-  UploadedFiles,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put, UploadedFiles, UseInterceptors } from '@nestjs/common';
 import { CatService } from './cat.service';
 import { Cat } from './entity/cat.entity';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { EditCatDto } from './dto/edit-cat.dto';
 import { FilesInterceptor } from '@nestjs/platform-express';
+import { Photo } from '../photo/entity/photo.entity';
+import { PhotoService } from '../photo/photo.service';
 
 /**
  * Cat controller
  */
 @Controller('api/cats')
 export class CatController {
-  constructor(private readonly catService: CatService) {}
+  constructor(private readonly catService: CatService, private readonly photoService: PhotoService) {}
 
   /**
    * Retrieves all cats
@@ -48,12 +41,17 @@ export class CatController {
    */
   @Post()
   @UseInterceptors(FilesInterceptor('files'))
-  createCat(
-    @UploadedFiles() files: Express.Multer.File,
-    @Body() payload: CreateCatDto,
-  ): Promise<Cat> {
-    console.log(files);
-    return this.catService.create(payload);
+  async createCat(@UploadedFiles() files, @Body() payload: CreateCatDto): Promise<Cat> {
+    const photos: Photo[] = files.map((file: Express.Multer.File) => {
+      return {
+        path: file.path,
+        isDeleted: false,
+      };
+    });
+    const savedPhotos = await this.photoService.savePhotos(photos);
+    const photoIds = savedPhotos.map((photo) => photo._id);
+
+    return this.catService.create(payload, photoIds);
   }
 
   /**

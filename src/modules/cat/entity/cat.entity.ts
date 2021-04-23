@@ -1,7 +1,6 @@
 import { Document } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { Photo } from '../../photo/entity/photo.entity';
 
 @Schema()
 export class Cat extends Document {
@@ -14,8 +13,8 @@ export class Cat extends Document {
   @Prop({ type: String })
   extraInfo: string;
 
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CatPhoto' }] })
-  photos: Photo[];
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Photo' }] })
+  photos: string[];
 
   @Prop({ type: Number })
   age: number;
