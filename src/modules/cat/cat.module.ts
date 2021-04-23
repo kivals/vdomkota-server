@@ -8,6 +8,7 @@ import { ConfigModule } from '../config/config.module';
 import { ConfigService } from '../config/config.service';
 import { imgFileName, imgFilter } from '../../utils/img-update.utils';
 import { diskStorage } from 'multer';
+import { PhotoModule } from '../photo/photo.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { diskStorage } from 'multer';
       }),
       inject: [ConfigService],
     }),
+    PhotoModule,
   ],
   controllers: [CatController],
   providers: [CatService],

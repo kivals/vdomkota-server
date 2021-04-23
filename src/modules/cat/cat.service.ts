@@ -4,13 +4,17 @@ import { Cat } from './entity/cat.entity';
 import { Model } from 'mongoose';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { EditCatDto } from './dto/edit-cat.dto';
+import { Photo } from '../photo/entity/photo.entity';
 
 /**
  * Cat service
  */
 @Injectable()
 export class CatService {
-  constructor(@InjectModel(Cat.name) private catModel: Model<Cat>) {}
+  constructor(
+    @InjectModel(Cat.name) private readonly catModel: Model<Cat>,
+    @InjectModel(Photo.name) private readonly photoModel: Model<Photo>,
+  ) {}
 
   /**
    * Fetches a cat from database
