@@ -8,6 +8,7 @@ import { MongooseModule, MongooseModuleAsyncOptions } from '@nestjs/mongoose';
 import { ConfigService } from './modules/config/config.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { ContentModule } from './modules/content/content.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'client'),
     }),
+    ContentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

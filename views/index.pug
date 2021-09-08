@@ -7,13 +7,13 @@ include ./components/head
                 .intro__video
                     .intro__overlay
                         h1.intro__title
-                            | &Pcy;&rcy;&icy;&yucy;&tcy; &dcy;&lcy;&yacy; &kcy;&ocy;&shcy;&iecy;&kcy;
+                            | #{page.mainTitle}
                             br
-                            span &quot;&Vcy;&Dcy;&Ocy;&Mcy;&Kcy;&Ocy;&Tcy;&Acy;&quot;
-                        a.intro__button.btn(href='#') &Zcy;&acy;&bcy;&rcy;&acy;&tcy;&softcy; &kcy; &scy;&iecy;&bcy;&iecy;
-                    video.intro__video-item(loop='' muted='' autoplay='' poster='./img/intro/intro_cat.webp')
-                        source(src='./videos/video.mp4' type='video/mp4')
-                        source(src='./videos/video.webm' type='video/webm')
+                            span "ВДОМКОТА"
+                        a.intro__button.btn(href='#') Забрать к себе
+                    video.intro__video-item(loop='' muted='' autoplay='' poster=page.videoImage)
+                        source(src=page.videoMp4 type='video/mp4')
+                        source(src=page.videoWebm type='video/webm')
         section.cat-slider
             .cat-slider__container._container
                 .cat-slider__body._swiper
@@ -61,56 +61,15 @@ include ./components/head
             .donation__container._container
                 .donation__body
                     .donation__image._ibg
-                        img(src='./img/donation/donation.webp' alt='donation')
+                        img(src=page.bankCat alt='Реквизиты для помощи')
                     .donation__content
-                        h2.donation__title._title &Rcy;&iecy;&kcy;&vcy;&icy;&zcy;&icy;&tcy;&ycy; &dcy;&lcy;&yacy; &pcy;&ocy;&mcy;&ocy;&shchcy;&icy;
+                        h2.donation__title._title #{page.bankTitle}
                         .donation__bank-info &Scy;&bcy;&iecy;&rcy;&bcy;&acy;&ncy;&kcy; / &Rcy;&acy;&scy;&chcy;&iecy;&tcy;&ncy;&ycy;&jcy;
                         a.donation__card._icon-card(href='#') 4817 7601 8652 8737
                         .donation__additional &YAcy;&ncy;&dcy;&iecy;&kcy;&scy; &Kcy;&ocy;&shcy;&iecy;&lcy;&iecy;&kcy;: 41001825208986
-        section.help
-            .help__container._container
-                h2.help__title._title &Kcy;&acy;&kcy; &pcy;&ocy;&mcy;&ocy;&chcy;&softcy; &pcy;&rcy;&icy;&yucy;&tcy;&ucy;
-                .help__content
-                    .help__item
-                        picture
-                            source(srcset='./img/help/food.webp' type='image/webp')
-                            img.help__image(src='./img/help/food.png' alt='Корм для кошек')
-                        .help__name &Kcy;&ocy;&rcy;&mcy;
-                    .help__item
-                        picture
-                            source(srcset='./img/help/transport.webp' type='image/webp')
-                            img.help__image(src='./img/help/transport.png' alt='Транспорт для кошек')
-                        .help__name &Tcy;&rcy;&acy;&ncy;&scy;&pcy;&ocy;&rcy;&tcy;
-                    .help__item
-                        picture
-                            source(srcset='./img/help/ball.webp' type='image/webp')
-                            img.help__image(src='./img/help/ball.png' alt='Игрушки и лежанки')
-                        .help__name &Icy;&gcy;&rcy;&ucy;&shcy;&kcy;&icy; &icy; &lcy;&iecy;&zhcy;&acy;&ncy;&kcy;&icy;
-                    .help__item
-                        picture
-                            source(srcset='./img/help/shampoo.webp' type='image/webp')
-                            img.help__image(src='./img/help/shampoo.png' alt='Средства гигиены и уборки')
-                        .help__name &Scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;&acy; &gcy;&icy;&gcy;&icy;&iecy;&ncy;&ycy; &icy; &ucy;&bcy;&ocy;&rcy;&kcy;&icy;
-                    .help__item
-                        picture
-                            source(srcset='./img/help/pills.webp' type='image/webp')
-                            img.help__image(src='./img/help/pills.png' alt='Витамины и лекарства')
-                        .help__name &Vcy;&icy;&tcy;&acy;&mcy;&icy;&ncy;&ycy; &icy; &lcy;&iecy;&kcy;&acy;&rcy;&scy;&tcy;&vcy;&acy;
-                    .help__item
-                        picture
-                            source(srcset='./img/help/medicine.webp' type='image/webp')
-                            img.help__image(src='./img/help/medicine.png' alt='Средства от паразитов')
-                        .help__name &Scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;&acy; &ocy;&tcy; &pcy;&acy;&rcy;&acy;&zcy;&icy;&tcy;&ocy;&vcy;
-                    .help__item
-                        picture
-                            source(srcset='./img/help/cat.webp' type='image/webp')
-                            img.help__image(src='./img/help/cat.png' alt='Наполнитель')
-                        .help__name &Ncy;&acy;&pcy;&ocy;&lcy;&ncy;&icy;&tcy;&iecy;&lcy;&softcy;
-                    .help__item
-                        picture
-                            source(srcset='./img/help/collars.webp' type='image/webp')
-                            img.help__image(src='./img/help/collars.png' alt='Лотки и миски')
-                        .help__name &Lcy;&ocy;&tcy;&kcy;&icy; &icy; &mcy;&icy;&scy;&kcy;&icy;
+
+        include ./components/help-block.pug
+
         section#aboutus.aboutus
             .aboutus__container._container
                 .aboutus__image._ibg

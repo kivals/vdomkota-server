@@ -1,0 +1,8 @@
+section.help
+    .help__container._container
+        h2.help__title._title &Kcy;&acy;&kcy; &pcy;&ocy;&mcy;&ocy;&chcy;&softcy; &pcy;&rcy;&icy;&yucy;&tcy;&ucy;
+        .help__content
+          each icon in page.helpIcons
+              .help__item
+                  img.help__image(src=icon.iconImage alt=icon.iconImageAlt)
+                  .help__name #{icon.iconIitle}
