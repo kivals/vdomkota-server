@@ -6,6 +6,8 @@ import { WinstonModule } from './modules/winston/winston.module';
 import { CatModule } from './modules/cat/cat.module';
 import { MongooseModule, MongooseModuleAsyncOptions } from '@nestjs/mongoose';
 import { ConfigService } from './modules/config/config.service';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -22,6 +24,9 @@ import { ConfigService } from './modules/config/config.service';
           useUnifiedTopology: true,
         } as MongooseModuleAsyncOptions;
       },
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'client'),
     }),
   ],
   controllers: [AppController],

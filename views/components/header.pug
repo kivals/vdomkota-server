@@ -1,0 +1,23 @@
+header.header
+    .header__content._container
+        .header__body
+            a.header__logo._ibg(href='/')
+                img(src='./img/logo.webp' alt='Логотип приюта ВДОМКОТА')
+            .header__menu.menu
+                nav.menu__body
+                    ul.menu__list
+                        li
+                            a.menu__link._active(href='/') Главная
+                        li
+                            a.menu__link(href='/find') Ищем хозяев
+                        li
+                            a.menu__link(href='/#donation') Реквизиты
+                        li
+                            a.menu__link(href='/#aboutus') О приюте
+            .header__social.social-header(data-da='.menu__body,767.98')
+                a.social-header__link._icon-vk(href='https://vk.com/vdomkota' target='_blank' rel='noopener')
+                a.social-header__link._icon-instagram(href='https://www.instagram.com/v_dom_kota' target='_blank' rel='noopener')
+            .menu__icon.icon-menu
+                span
+                span
+                span

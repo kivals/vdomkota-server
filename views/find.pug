@@ -1,0 +1,67 @@
+include ./components/head.pug
+.wrapper
+    include ./components/header.pug
+    main.page.page__find
+        section.find
+            .find__container._container
+                h1.find__title._title &Kcy;&ocy;&tcy;&icy;&kcy;&icy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&iecy; &icy;&shchcy;&ucy;&tcy; &dcy;&ocy;&mcy;
+                .find__content
+                    article.find__cat.cat-item
+                        .cat-item__body
+                            .cat-item__image._ibg
+                                img(src='./img/cats/Лео/leo-1.webp' alt='Лео')
+                            .cat-item__name &Lcy;&iecy;&ocy;
+                            .cat-item__overlay
+                                a.cat-item__button.btn(href='/cat-id.html') &Pcy;&ocy;&scy;&mcy;&ocy;&tcy;&rcy;&iecy;&tcy;&softcy; &kcy;&ocy;&tcy;&icy;&kcy;&acy;
+                    article.find__cat.cat-item
+                        .cat-item__body
+                            .cat-item__image._ibg
+                                img(src='./img/cats/Марфа/marpha-1.webp' alt='Марфа')
+                            .cat-item__name &Mcy;&acy;&rcy;&fcy;&acy;
+                            .cat-item__overlay
+                                a.cat-item__button.btn(href='#') &Pcy;&ocy;&scy;&mcy;&ocy;&tcy;&rcy;&iecy;&tcy;&softcy; &kcy;&ocy;&tcy;&icy;&kcy;&acy;
+                    article.find__cat.cat-item
+                        .cat-item__body
+                            .cat-item__image._ibg
+                                img(src='./img/cats/Лапка/lapka-1.webp' alt='Лапка')
+                            .cat-item__name &Lcy;&acy;&pcy;&kcy;&acy;
+                            .cat-item__overlay
+                                a.cat-item__button.btn(href='#') &Pcy;&ocy;&scy;&mcy;&ocy;&tcy;&rcy;&iecy;&tcy;&softcy; &kcy;&ocy;&tcy;&icy;&kcy;&acy;
+                    article.find__cat.cat-item
+                        .cat-item__body
+                            .cat-item__image._ibg
+                                img(src='./img/cats/Финик/phinik-1.webp' alt='Финик')
+                            .cat-item__name &Fcy;&icy;&ncy;&icy;&kcy;
+                            .cat-item__overlay
+                                a.cat-item__button.btn(href='#') &Pcy;&ocy;&scy;&mcy;&ocy;&tcy;&rcy;&iecy;&tcy;&softcy; &kcy;&ocy;&tcy;&icy;&kcy;&acy;
+                    article.find__cat.cat-item
+                        .cat-item__body
+                            .cat-item__image._ibg
+                                img(src='./img/cats/Пират/pirat-1.webp' alt='Пират')
+                            .cat-item__name &Pcy;&icy;&rcy;&acy;&tcy;
+                            .cat-item__overlay
+                                a.cat-item__button.btn(href='#') &Pcy;&ocy;&scy;&mcy;&ocy;&tcy;&rcy;&iecy;&tcy;&softcy; &kcy;&ocy;&tcy;&icy;&kcy;&acy;
+                    article.find__cat.cat-item
+                        .cat-item__body
+                            .cat-item__image._ibg
+                                img(src='./img/cats/Мия/mia-1.webp' alt='Мия')
+                            .cat-item__name &Mcy;&icy;&yacy;
+                            .cat-item__overlay
+                                a.cat-item__button.btn(href='#') &Pcy;&ocy;&scy;&mcy;&ocy;&tcy;&rcy;&iecy;&tcy;&softcy; &kcy;&ocy;&tcy;&icy;&kcy;&acy;
+    include ./components/footer.pug
+.popup.popup_popup
+    .popup__content
+        .popup__body
+            .popup__close
+.popup.popup_massagename-message
+    .popup__content
+        .popup__body
+            .popup__close
+.popup.popup_video
+    .popup__content
+        .popup__body
+            .popup__close.popup__close_video
+            .popup__video._video
+// Swiper
+script(src='js/vendors.min.js')
+script(src='js/app.min.js')

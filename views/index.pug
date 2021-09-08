@@ -1,0 +1,137 @@
+include ./components/head
+.wrapper
+    include ./components/header.pug
+    main.page
+        section.intro
+            .intro__container
+                .intro__video
+                    .intro__overlay
+                        h1.intro__title
+                            | &Pcy;&rcy;&icy;&yucy;&tcy; &dcy;&lcy;&yacy; &kcy;&ocy;&shcy;&iecy;&kcy;
+                            br
+                            span &quot;&Vcy;&Dcy;&Ocy;&Mcy;&Kcy;&Ocy;&Tcy;&Acy;&quot;
+                        a.intro__button.btn(href='#') &Zcy;&acy;&bcy;&rcy;&acy;&tcy;&softcy; &kcy; &scy;&iecy;&bcy;&iecy;
+                    video.intro__video-item(loop='' muted='' autoplay='' poster='./img/intro/intro_cat.webp')
+                        source(src='./videos/video.mp4' type='video/mp4')
+                        source(src='./videos/video.webm' type='video/webm')
+        section.cat-slider
+            .cat-slider__container._container
+                .cat-slider__body._swiper
+                    article.cat-slider__slide.slide-cat
+                        .slide-cat__body
+                            .slide-cat__image._ibg
+                                img(src='./img/cats/Лео/leo-1.webp' alt='Лео')
+                            .slide-cat__name &Lcy;&iecy;&ocy;
+                            a.slide-cat__button.btn(href='#') &pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+                    article.cat-slider__slide.slide-cat
+                        .slide-cat__body
+                            .slide-cat__image._ibg
+                                img(src='./img/cats/Марфа/marpha-1.webp' alt='Марфа')
+                            .slide-cat__name &Mcy;&acy;&rcy;&fcy;&acy;
+                            a.slide-cat__button.btn(href='#') &pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+                    article.cat-slider__slide.slide-cat
+                        .slide-cat__body
+                            .slide-cat__image._ibg
+                                img(src='./img/cats/Лапка/lapka-1.webp' alt='Лапка')
+                            .slide-cat__name &Lcy;&acy;&pcy;&kcy;&acy;
+                            a.slide-cat__button.btn(href='#') &pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+                    article.cat-slider__slide.slide-cat
+                        .slide-cat__body
+                            .slide-cat__image._ibg
+                                img(src='./img/cats/Пират/pirat-1.webp' alt='Пират')
+                            .slide-cat__name &Pcy;&icy;&rcy;&acy;&tcy;
+                            a.slide-cat__button.btn(href='#') &pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+                    article.cat-slider__slide.slide-cat
+                        .slide-cat__body
+                            .slide-cat__image._ibg
+                                img(src='./img/cats/Мия/mia-1.webp' alt='Мия')
+                            .slide-cat__name &Mcy;&icy;&yacy;
+                            a.slide-cat__button.btn(href='#') &pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+                    article.cat-slider__slide.slide-cat
+                        .slide-cat__body
+                            .slide-cat__image._ibg
+                                img(src='./img/cats/Финик/phinik-1.webp' alt='Финик')
+                            .slide-cat__name &Fcy;&icy;&ncy;&icy;&kcy;
+                            a.slide-cat__button.btn(href='#') &pcy;&ocy;&dcy;&rcy;&ocy;&bcy;&ncy;&iecy;&iecy;
+                .cat-slider__arrows.slider-arrows
+                    button.slider-arrows__item.slider-arrows__item_prev._icon-arrow(type='button')
+                    button.slider-arrows__item.slider-arrows__item_next._icon-arrow(type='button')
+                .cat-slider__dots
+        section#donation.donation
+            .donation__container._container
+                .donation__body
+                    .donation__image._ibg
+                        img(src='./img/donation/donation.webp' alt='donation')
+                    .donation__content
+                        h2.donation__title._title &Rcy;&iecy;&kcy;&vcy;&icy;&zcy;&icy;&tcy;&ycy; &dcy;&lcy;&yacy; &pcy;&ocy;&mcy;&ocy;&shchcy;&icy;
+                        .donation__bank-info &Scy;&bcy;&iecy;&rcy;&bcy;&acy;&ncy;&kcy; / &Rcy;&acy;&scy;&chcy;&iecy;&tcy;&ncy;&ycy;&jcy;
+                        a.donation__card._icon-card(href='#') 4817 7601 8652 8737
+                        .donation__additional &YAcy;&ncy;&dcy;&iecy;&kcy;&scy; &Kcy;&ocy;&shcy;&iecy;&lcy;&iecy;&kcy;: 41001825208986
+        section.help
+            .help__container._container
+                h2.help__title._title &Kcy;&acy;&kcy; &pcy;&ocy;&mcy;&ocy;&chcy;&softcy; &pcy;&rcy;&icy;&yucy;&tcy;&ucy;
+                .help__content
+                    .help__item
+                        picture
+                            source(srcset='./img/help/food.webp' type='image/webp')
+                            img.help__image(src='./img/help/food.png' alt='Корм для кошек')
+                        .help__name &Kcy;&ocy;&rcy;&mcy;
+                    .help__item
+                        picture
+                            source(srcset='./img/help/transport.webp' type='image/webp')
+                            img.help__image(src='./img/help/transport.png' alt='Транспорт для кошек')
+                        .help__name &Tcy;&rcy;&acy;&ncy;&scy;&pcy;&ocy;&rcy;&tcy;
+                    .help__item
+                        picture
+                            source(srcset='./img/help/ball.webp' type='image/webp')
+                            img.help__image(src='./img/help/ball.png' alt='Игрушки и лежанки')
+                        .help__name &Icy;&gcy;&rcy;&ucy;&shcy;&kcy;&icy; &icy; &lcy;&iecy;&zhcy;&acy;&ncy;&kcy;&icy;
+                    .help__item
+                        picture
+                            source(srcset='./img/help/shampoo.webp' type='image/webp')
+                            img.help__image(src='./img/help/shampoo.png' alt='Средства гигиены и уборки')
+                        .help__name &Scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;&acy; &gcy;&icy;&gcy;&icy;&iecy;&ncy;&ycy; &icy; &ucy;&bcy;&ocy;&rcy;&kcy;&icy;
+                    .help__item
+                        picture
+                            source(srcset='./img/help/pills.webp' type='image/webp')
+                            img.help__image(src='./img/help/pills.png' alt='Витамины и лекарства')
+                        .help__name &Vcy;&icy;&tcy;&acy;&mcy;&icy;&ncy;&ycy; &icy; &lcy;&iecy;&kcy;&acy;&rcy;&scy;&tcy;&vcy;&acy;
+                    .help__item
+                        picture
+                            source(srcset='./img/help/medicine.webp' type='image/webp')
+                            img.help__image(src='./img/help/medicine.png' alt='Средства от паразитов')
+                        .help__name &Scy;&rcy;&iecy;&dcy;&scy;&tcy;&vcy;&acy; &ocy;&tcy; &pcy;&acy;&rcy;&acy;&zcy;&icy;&tcy;&ocy;&vcy;
+                    .help__item
+                        picture
+                            source(srcset='./img/help/cat.webp' type='image/webp')
+                            img.help__image(src='./img/help/cat.png' alt='Наполнитель')
+                        .help__name &Ncy;&acy;&pcy;&ocy;&lcy;&ncy;&icy;&tcy;&iecy;&lcy;&softcy;
+                    .help__item
+                        picture
+                            source(srcset='./img/help/collars.webp' type='image/webp')
+                            img.help__image(src='./img/help/collars.png' alt='Лотки и миски')
+                        .help__name &Lcy;&ocy;&tcy;&kcy;&icy; &icy; &mcy;&icy;&scy;&kcy;&icy;
+        section#aboutus.aboutus
+            .aboutus__container._container
+                .aboutus__image._ibg
+                    img(src='./img/aboutus/cat-about.webp' alt='О нас')
+                .aboutus__content
+                    h2.aboutus__title._title &Ocy; &pcy;&rcy;&icy;&yucy;&tcy;&iecy; &quot;&Vcy; &Dcy;&ocy;&mcy; &Kcy;&ocy;&tcy;&acy;&quot;
+                    .aboutus__text
+                        | &Vcy; &Dcy;&Ocy;&Mcy; &Kcy;&Ocy;&Tcy;&Acy; - &chcy;&acy;&scy;&tcy;&ncy;&ycy;&jcy; &mcy;&icy;&ncy;&icy;-&pcy;&rcy;&icy;&yucy;&tcy; &dcy;&lcy;&yacy; &bcy;&iecy;&zcy;&dcy;&ocy;&mcy;&ncy;&ycy;&khcy; &kcy;&ocy;&shcy;&iecy;&kcy;. &Pcy;&ocy;&chcy;&iecy;&mcy;&ucy; &mcy;&ycy; &ncy;&acy;&zcy;&ycy;&vcy;&acy;&iecy;&mcy;&scy;&yacy; &quot;&Vcy; &Dcy;&Ocy;&Mcy; &Kcy;&Ocy;&Tcy;&Acy;&quot;? &Pcy;&ocy;&tcy;&ocy;&mcy;&ucy; &chcy;&tcy;&ocy; &ocy;&scy;&ncy;&ocy;&vcy;&ncy;&acy;&yacy; &ncy;&acy;&shcy;&acy; &zcy;&acy;&dcy;&acy;&chcy;&acy; - &ncy;&acy;&khcy;&ocy;&dcy;&icy;&tcy;&softcy; &ncy;&ocy;&vcy;&ycy;&jcy; &dcy;&ocy;&mcy; &bcy;&iecy;&zcy;&dcy;&ocy;&mcy;&ncy;&ycy;&mcy; &kcy;&ocy;&tcy;&icy;&kcy;&acy;&mcy;, &lcy;&yucy;&dcy;&iecy;&jcy;, &kcy;&ocy;&tcy;&ocy;&rcy;&ycy;&iecy; &khcy;&ocy;&tcy;&yacy;&tcy; &pcy;&ocy;&mcy;&ocy;&chcy;&softcy;, &scy;&pcy;&acy;&scy;&tcy;&icy; &icy; &pcy;&rcy;&icy;&ocy;&bcy;&rcy;&iecy;&scy;&tcy;&icy; &dcy;&rcy;&ucy;&gcy;&acy;, &acy; &zcy;&ncy;&acy;&chcy;&icy;&tcy; &vcy;&zcy;&yacy;&tcy;&softcy; &Vcy; &Dcy;&Ocy;&Mcy; &Kcy;&Ocy;&Tcy;&Acy;! &Pcy;&rcy;&icy;&yucy;&tcy; &scy;&ucy;&shchcy;&iecy;&scy;&tcy;&vcy;&ucy;&iecy;&tcy; &tcy;&ocy;&lcy;&softcy;&kcy;&ocy; &ncy;&acy; &pcy;&ocy;&zhcy;&iecy;&rcy;&tcy;&vcy;&ocy;&vcy;&acy;&ncy;&icy;&yacy; &ncy;&iecy;&rcy;&acy;&vcy;&ncy;&ocy;&dcy;&ucy;&shcy;&ncy;&ycy;&khcy; &lcy;&yucy;&dcy;&iecy;&jcy;! &Pcy;&ocy;&mcy;&ocy;&shchcy;&softcy; &vcy;&scy;&iecy;&gcy;&dcy;&acy; &acy;&kcy;&tcy;&ucy;&acy;&lcy;&softcy;&ncy;&acy;!
+    include ./components/footer.pug
+.popup.popup_popup
+    .popup__content
+        .popup__body
+            .popup__close
+.popup.popup_massagename-message
+    .popup__content
+        .popup__body
+            .popup__close
+.popup.popup_video
+    .popup__content
+        .popup__body
+            .popup__close.popup__close_video
+            .popup__video._video
+script(src='js/vendors.min.js')
+script(src='js/app.min.js')
